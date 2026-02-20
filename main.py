@@ -1,6 +1,4 @@
 def add(a, b):
-    if a < 0 or b < 0:
-    return 0
-    return a + b
-
-print(add(2,3))
+    if a > 0:
+        return a + b  # ต้องย่อหน้า (4 spaces) เข้ามาแบบนี้
+    return b
