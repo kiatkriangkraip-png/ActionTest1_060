@@ -7,8 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install pytest
-     - run: python -m pytest
+
+      - name: Install dependencies
+        run: |
+          pip install pytest
+          # ถ้าไม่มีไฟล์ setup.py หรือ pyproject.toml ให้ลบบรรทัดล่างนี้ออกครับ
+          # pip install -e . 
+
+      - name: Run pytest
+        run: python -m pytest
